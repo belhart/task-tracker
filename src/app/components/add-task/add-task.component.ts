@@ -6,10 +6,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./add-task.component.css']
 })
 export class AddTaskComponent implements OnInit {
+  text: string = "";
+  day: string = "";
+  reminder: boolean = false;
+
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSubmit(){
+    if(!this.text){
+      alert("Add a task"); return;
+    }
+
+    const newTask = {
+      text: this.text,
+      day: this.day,
+      reminder: this.reminder
+    }
+
+    //emit
+  }
 }
